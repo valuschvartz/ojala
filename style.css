@@ -1096,6 +1096,26 @@ nav ul li a{color:var(--color-text-dark);font-weight:600;padding:8px 0;white-spa
 .btn-primary.shop-btn:focus,
 .btn-primary.shop-btn:active{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}
 
+
+/* === Espaciado extra entre botones en mobile === */
+@media (max-width: 768px) {
+  .btn,
+  .shop-btn {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    margin-inline: auto;
+    margin-bottom: 20px; /* 🔹 más espacio entre botones */
+  }
+
+  /* Un poco menos apretados en pantallas muy chicas */
+  @media (max-width: 480px) {
+    .btn,
+    .shop-btn {
+      margin-bottom: 24px;
+    }
+  }
+}
 /* -------------------- */
 /* Hero                 */
 /* -------------------- */
