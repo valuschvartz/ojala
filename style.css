@@ -1,0 +1,996 @@
+/* Variables de Color (Basadas en tu logo y tonos suaves) */
+:root {
+    --color-primary: #e91e63; /* Rosa vibrante de tu logo (Acento) */
+    --color-primary-dark: #c2185b; /* Rosa oscuro para hover */
+    --color-secondary-bg: #fce4ec; /* Rosa muy claro (Fondo de secciones) */
+    --color-text-dark: #333;
+    --color-text-light: #fff;
+    --color-background-light: #fff;
+    --color-border: #eee; /* Borde suave */
+}
+
+/* Base y Tipografía */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    background-color: var(--color-background-light);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-primary-dark);
+}
+
+/* ------------------------------------- */
+/* 1. Header y Navegación */
+/* ------------------------------------- */
+
+header {
+    background-color: var(--color-background-light);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.header-logo {
+    height: 70px;
+    width: auto;
+    transition: transform 0.3s;
+}
+.header-logo:hover {
+    transform: scale(1.05);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-weight: 600;
+    color: var(--color-text-dark);
+    padding: 5px 0;
+    white-space: nowrap;
+}
+
+/* Estilo del ícono de Instagram en la navegación */
+.instagram-icon-nav {
+    font-size: 1.5rem;
+    margin-left: 30px; /* Separación del menú */
+    color: var(--color-primary-dark); 
+    /* Eliminamos: border: 2px solid var(--color-primary-dark); */
+    /* Eliminamos: border-radius: 50%; */
+    padding: 0; /* Reducimos el padding */
+    transition: color 0.3s, transform 0.3s;
+}
+.instagram-icon-nav:hover {
+    color: var(--color-primary); /* Cambia el color al hacer hover */
+    background-color: transparent; /* Aseguramos que no haya fondo */
+    transform: scale(1.1); /* Animación de escala sutil */
+    /* Eliminamos: transform: rotate(10deg) scale(1.1); */
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+/* ------------------------------------- */
+/* 2. Hero Section */
+/* ------------------------------------- */
+
+.hero-section {
+    background-color: var(--color-secondary-bg);
+    padding: 50px 0;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-tagline {
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.hero-ctas .btn {
+    margin-right: 15px;
+}
+
+.placeholder-hero-image {
+    background-image: url('placeholder-hero.jpg'); /* Reemplazar con imagen destacada */
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------------- */
+/* Secciones Generales */
+/* ------------------------------------- */
+
+.section {
+    padding: 60px 0;
+}
+.padded-section {
+    padding: 80px 0;
+}
+.bg-light {
+    background-color: var(--color-secondary-bg);
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--color-primary-dark);
+}
+.section-subtitle {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 40px;
+}
+.centered-title {
+    text-align: center;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    text-align: center;
+}
+.btn-small {
+    padding: 8px 15px;
+    font-size: 0.85rem;
+}
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: 2px solid var(--color-primary);
+}
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.btn-secondary, .btn-secondary-nav {
+    background-color: transparent;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+}
+.btn-secondary:hover, .btn-secondary-nav:hover {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    transform: translateY(-2px);
+}
+
+/* ------------------------------------- */
+/* 3. About Section */
+/* ------------------------------------- */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.about-features {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Hace la imagen del bloque About más chica y responsiva */
+.about-image {
+  display: flex;              /* para poder centrarla si querés */
+  justify-content: center;
+}
+
+.about-image .hero-image {
+  width: 100%;
+  max-width: 560px;           /* <-- cambiá este valor para hacerla más/menos chica */
+  height: auto;
+  border-radius: 10px;
+}
+
+.feature-box {
+    background-color: var(--color-secondary-bg);
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    border-left: 5px solid var(--color-primary);
+}
+
+.feature-box i {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+}
+
+.feature-box h4 {
+    color: var(--color-primary-dark);
+    margin-bottom: 5px;
+}
+
+.placeholder-image {
+    background-color: var(--color-border);
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: var(--color-primary);
+    font-weight: 600;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------------- */
+/* 4. Classes Section */
+/* ------------------------------------- */
+
+/* ===== Grid de tarjetas ===== */
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* ===== Tarjeta ===== */
+.class-card {
+  background-color: var(--color-background-light);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.class-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Imagen de la clase (compatible img o background) ===== */
+.class-image {
+  width: 100%;
+  height: 220px; /* probá subirlo a 280px o más si se corta */
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.class-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* recorte estético sin deformar */
+  object-position: center;
+  transition: transform 0.3s ease;
+}
+
+/* Hover suave (sirve para <img>; si usás background, simplemente no aplica) */
+.class-image:hover img {
+  transform: scale(1.05);
+}
+
+/* ===== Placeholders por background (opcional, si no usás <img>) ===== */
+.placeholder-class-1 { background-image: url('placeholder-mac-1.jpg'); }
+.placeholder-class-2 { background-image: url('placeholder-mac-2.jpg'); }
+.placeholder-class-3 { background-image: url('placeholder-mac-3.jpg'); }
+
+/* ===== Contenido de la tarjeta ===== */
+.class-content {
+  padding: 25px;
+}
+
+.class-level {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 4px 10px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.class-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 10px;
+}
+
+.class-description {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.class-details {
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+.class-details li i {
+  color: var(--color-primary);
+  margin-right: 8px;
+}
+
+.class-ctas .btn {
+  margin-right: 10px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .class-image { height: 180px; }
+}
+
+
+/* -------------------------------------
+   5) Sección de Venta (Tienda) – 3 Columnas Uniformes y Estilo Avanzado
+------------------------------------- */
+/* Fondo blanco para la sección de tienda */
+#shop.section {
+  background-color: #fff;
+  border-top: 2px solid rgba(0, 0, 0, 0.05); /* línea separadora sutil */
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+/* Para mantener coherencia visual con el resto */
+.shop-grid-three {
+  margin-top: 40px;
+}
+
+/* Grid de 3 columnas */
+.shop-grid-three {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;              /* iguala alturas */
+  gap: 30px;
+  margin-top: 48px;
+  position: relative;
+}
+
+/* Tarjeta base */
+.shop-option {
+  --card-pad-x: 28px;
+  --card-pad-y: 35px;
+  display: flex;
+  flex-direction: column;            /* para empujar el CTA al fondo */
+  justify-content: space-between;
+
+  background: white;
+  padding: var(--card-pad-y) var(--card-pad-x);
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,.06);
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.06),
+    0 2px 6px rgba(0,0,0,.03);
+  text-align: center;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  position: relative;                /* para cinta/ribbon */
+  min-height: 100%;
+}
+
+.shop-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.10), 0 3px 10px rgba(0,0,0,.05);
+  border-color: rgba(0,0,0,.10);
+}
+
+/* Borde/acento superior */
+.shop-option::before {
+  content: "";
+  display: block;
+  height: 6px;
+  width: 72px;
+  margin: -6px auto 24px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  opacity: .9;
+}
+
+/* Iconos y tipografías */
+.shop-option i {
+  font-size: 2rem;
+  color: var(--color-primary-dark);
+  margin-bottom: 8px;
+}
+
+.shop-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--color-primary-dark);
+  margin: 6px 0 16px;
+}
+
+.shop-description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-text, #333);
+  margin: 0 auto 20px;
+  max-width: 42ch;
+}
+
+/* Lista de features */
+.shop-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 24px;
+  max-width: 34ch;
+  text-align: left;
+}
+.shop-features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+.shop-features li i {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  color: var(--color-primary);
+  margin: 0;
+}
+
+/* Botones (centrados y alineados abajo) */
+.shop-btn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;                  /* empuja el CTA al fondo de la card */
+  width: min(100%, 260px);
+  padding: 14px 24px;
+  font-weight: 700;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* Variantes del botón dentro de la sección */
+.btn-primary.shop-btn {
+  background-color: var(--color-primary);
+  color: #fff;
+  border: 2px solid var(--color-primary);
+}
+.btn-primary.shop-btn:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+}
+
+.btn-secondary.shop-btn {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+.btn-secondary.shop-btn:hover {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+/* -------------------------------------
+   Card de "Macarons Personalizados" (contraste)
+------------------------------------- */
+.custom-macaron-card {
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-light);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.custom-macaron-card::before {
+  background: linear-gradient(90deg, var(--color-secondary-bg) 0%, var(--color-text-light) 100%);
+  opacity: 1;
+}
+.custom-macaron-card .shop-title { color: var(--color-text-light); }
+.custom-macaron-card .shop-description { color: #f0f0f0; }
+.custom-macaron-card i { color: var(--color-secondary-bg); }
+.custom-macaron-card .shop-features li i { color: var(--color-secondary-bg); }
+
+/* Solo cambia el estilo del botón, no el fondo */
+.custom-macaron-card .btn-primary.shop-btn {
+  background-color: white !important;
+  color: var(--color-primary) !important;
+  border: 2px solid var(--color-primary) !important;
+  transition: all 0.3s ease;
+}
+
+.custom-macaron-card .btn-primary.shop-btn:hover {
+  background-color: var(--color-primary) !important;
+  color: #fff !important;
+}
+/* -------------------------------------
+   Cinta diagonal “PRÓXIMAMENTE”
+------------------------------------- */
+/* Cinta diagonal completa “PRÓXIMAMENTE” */
+/* Cinta diagonal completa “PRÓXIMAMENTE” */
+.ribbon-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.ribbon-text.large-ribbon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 165%;                  /* ocupa toda la diagonal */
+  height: 70px;                 /* cinta más ancha */
+  line-height: 70px;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  font-size: 1.4rem;            /* texto más grande */
+  text-transform: uppercase;
+  color: gray;
+  background: var(--color-secondary-bg);         /* dorado */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+}
+
+/* Efecto visual para los bordes (opcional) */
+.ribbon-text.large-ribbon::before,
+.ribbon-text.large-ribbon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: rgba(0, 0, 0, 0.15);
+  filter: blur(2px);
+}
+.ribbon-text.large-ribbon::before { left: -20px; }
+.ribbon-text.large-ribbon::after  { right: -20px; }
+
+
+
+/* -------------------------------------
+   Responsivo
+------------------------------------- */
+@media (min-width: 1025px) {
+  .shop-option { min-height: 520px; } /* uniformidad visual en desktop */
+}
+
+@media (max-width: 1024px) {
+  .shop-grid-three {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ribbon-text.large-ribbon {
+    width: 200%;
+    height: 56px;
+    line-height: 56px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+  }
+}
+
+
+/* Accesibilidad foco en CTA */
+.shop-btn:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-primary) 55%, white);
+  outline-offset: 2px;
+}
+
+
+
+
+/* ------------------------------------- */
+/* 6. Sección: Colorantes Americolor */
+/* ------------------------------------- */
+
+.americolor-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.americolor-text {
+    padding-right: 20px;
+}
+
+.americolor-features {
+    list-style: none;
+    padding: 0;
+    margin: 30px 0;
+}
+
+.americolor-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.05rem;
+    margin-bottom: 15px;
+}
+
+.americolor-features li i {
+    color: var(--color-primary);
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.americolor-placeholder {
+    /* Estilo del placeholder para Americolor */
+    background-color: #E0F7FA; 
+    height: 400px;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Responsividad */
+@media (max-width: 992px) {
+    .americolor-grid {
+        grid-template-columns: 1fr;
+    }
+    .americolor-image {
+        order: -1; /* Mueve la imagen arriba en móvil */
+    }
+    .americolor-placeholder {
+        height: 300px;
+        margin-bottom: 20px;
+    }
+    .americolor-text {
+        padding-right: 0;
+    }
+}
+/* -------------------------------------
+   5b) Gallery Section – ajustes sutiles
+------------------------------------- */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  grid-auto-rows: 200px;
+  margin-top: 40px;
+  grid-auto-flow: dense; 
+}
+
+.gallery-item {
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,.10);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(0,0,0,.14);
+}
+
+.gallery-item.large { grid-column: span 2; grid-row: span 2; }
+.gallery-item.wide  { grid-column: span 2; }
+
+/* 🔸 NUEVA CLASE PARA HACERLA VERTICAL */
+.gallery-item.tall  { grid-row: span 2; }
+
+/* --- Responsividad --- */
+@media (max-width: 900px) {
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 170px; }
+  .gallery-item.large, 
+  .gallery-item.wide, 
+  .gallery-item.tall { grid-column: span 2; grid-row: span 1; } /* normaliza en mobile */
+}
+
+@media (max-width: 520px) {
+  .gallery-grid { grid-template-columns: 1fr; grid-auto-rows: 170px; }
+}
+
+/* ------------------------------------- */
+/* 6. Contact Section */
+/* ------------------------------------- */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.info-box {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;  
+}
+
+.info-box i {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-right: 15px;
+}
+.info-box h4 {
+    color: var(--color-primary-dark);
+    margin-bottom: 0;
+    margin: 0;    
+}
+.info-box p {
+    font-size: 0.95rem;
+     margin: 0;   
+}
+.info-box h4 {
+  margin-bottom: 6px;  /* Espacio entre el título y el texto */
+}
+
+.map-container {
+    margin-top: 30px;
+}
+.map-container iframe {
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--color-primary-dark);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+}
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* ------------------------------------- */
+/* FAQs (Estilo acordeón) */
+/* ------------------------------------- */
+
+.faq-list {
+    max-width: 900px;
+    margin: 40px auto 0;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+.faq-item summary {
+    font-weight: 600;
+    cursor: pointer;
+    padding: 15px 0;
+    font-size: 1.05rem;
+    color: var(--color-text-dark);
+    list-style: none;
+    position: relative;
+    padding-left: 30px;
+    transition: color 0.3s;
+}
+.faq-item summary:hover {
+    color: var(--color-primary);
+}
+.faq-item summary::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--color-primary);
+    transition: transform 0.2s;
+}
+.faq-item[open] summary::before {
+    content: '−';
+}
+
+.faq-answer {
+    padding: 5px 0 15px 30px;
+    font-size: 0.95rem;
+}
+
+/* ------------------------------------- */
+/* Footer */
+/* ------------------------------------- */
+
+footer {
+    background-color: var(--color-text-dark);
+    color: var(--color-text-light);
+    padding: 20px 0;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-links a {
+    color: var(--color-text-light);
+    font-size: 1.4rem;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--color-primary);
+}
+
+
+/* ------------------------------------- */
+/* RESPONSIVE DESIGN */
+/* ------------------------------------- */
+
+@media (max-width: 992px) {
+    .hero-title { font-size: 2.8rem; }
+    .section-title { font-size: 2rem; }
+
+    /* Grids a Columna Simple */
+    .hero-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .about-image { order: -1; } /* Mueve la imagen arriba en móvil */
+    .classes-grid { gap: 20px; }
+    
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .social-links { margin-top: 15px; }
+
+    /* Navegación Móvil */
+    nav { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background-color: var(--color-background-light); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); padding-bottom: 10px; }
+    nav.active { display: flex; }
+    nav ul { flex-direction: column; padding: 10px 0; align-items: stretch; margin-right: 0; }
+    nav ul li { margin: 0; text-align: center; }
+    nav ul li a { display: block; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+    .instagram-icon-nav { display: none; } /* Ocultar del nav en móvil */
+    .menu-toggle { display: block; }
+
+    /* Galería */
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 150px;
+    }
+    .gallery-item.large {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .gallery-item.wide {
+        grid-column: span 2;
+    }
+}
+/* Botón de "Consultar Personalizados" dentro de la card oscura */
+.custom-macaron-card .btn-primary.shop-btn {
+  background-color: #fff !important;                 /* normal: fondo blanco */
+  color: var(--color-primary) !important;            /* texto coral */
+  border: 2px solid var(--color-primary) !important;
+  -webkit-tap-highlight-color: transparent;          /* iOS */
+}
+
+/* hover, focus y active con el mismo estilo (relleno coral, texto blanco) */
+.custom-macaron-card .btn-primary.shop-btn:hover,
+.custom-macaron-card .btn-primary.shop-btn:focus,
+.custom-macaron-card .btn-primary.shop-btn:active {
+  background-color: var(--color-primary) !important;
+  color: #fff !important;
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,.15);
+  transform: translateY(0);                           /* evita “hundirse” raro en iOS */
+}
+
+/* Por si el navegador aplica :visited en <a> */
+.custom-macaron-card .btn-primary.shop-btn:visited {
+  color: var(--color-primary) !important;
+}
+
+/* --- Botón "Ver Catálogo y Precios" (sección Americolor) --- */
+.americolor-text .btn-primary.shop-btn {
+  background-color: #fff;               /* fondo blanco */
+  color: var(--color-primary);          /* texto coral */
+  border: 2px solid var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  padding: 14px 26px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.americolor-text .btn-primary.shop-btn:hover,
+.americolor-text .btn-primary.shop-btn:focus,
+.americolor-text .btn-primary.shop-btn:active {
+  background-color: var(--color-primary);
+  color: #fff;                          /* texto visible */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
