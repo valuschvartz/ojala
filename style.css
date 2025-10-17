@@ -650,66 +650,110 @@ nav ul li a {
 
 
 
-
 /* ------------------------------------- */
-/* 6. Sección: Colorantes Americolor */
+/* Sección: Colorantes Americolor */
 /* ------------------------------------- */
-
 .americolor-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
 }
 
 .americolor-text {
-    padding-right: 20px;
-}
-
-.americolor-features {
-    list-style: none;
-    padding: 0;
-    margin: 30px 0;
+  padding-right: 20px;
 }
 
 .americolor-features li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 1.05rem;
-    margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 1.05rem;
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
 .americolor-features li i {
-    color: var(--color-primary);
-    font-size: 1.3rem;
-    flex-shrink: 0;
+  color: var(--color-primary);
+  font-size: 1.3rem;
+  flex-shrink: 0;
+  margin-top: 3px;
 }
 
+.americolor-features li strong {
+  font-weight: 700;
+  color: var(--color-text-dark);
+  margin-right: 6px;
+  white-space: nowrap; /* 🔹 evita que se corte la frase */
+}
+
+.americolor-features li span {
+  display: inline; /* asegura que siga en línea */
+}
 .americolor-placeholder {
-    /* Estilo del placeholder para Americolor */
-    background-color: #E0F7FA; 
-    height: 400px;
-    border-radius: 15px;
-    font-size: 1.1rem;
-    font-weight: 700;
+  background-color: #fff;
+  height: 400px;
+  
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  object-fit: cover;
+  width: 100%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
-/* Responsividad */
+/* Botón WhatsApp centrado */
+.americolor-text .btn-primary.shop-btn {
+  display: block;              /* antes: inline-block */
+  margin: 24px auto 0;         /* centra horizontalmente */
+  width: fit-content;          /* se ajusta al texto */
+  background-color: #fff;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  padding: 14px 26px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+/* Hover / focus / active */
+.americolor-text .btn-primary.shop-btn:hover,
+.americolor-text .btn-primary.shop-btn:focus,
+.americolor-text .btn-primary.shop-btn:active {
+  background-color: var(--color-primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+
+
+/* Responsive */
 @media (max-width: 992px) {
-    .americolor-grid {
-        grid-template-columns: 1fr;
-    }
-    .americolor-image {
-        order: -1; /* Mueve la imagen arriba en móvil */
-    }
-    .americolor-placeholder {
-        height: 300px;
-        margin-bottom: 20px;
-    }
-    .americolor-text {
-        padding-right: 0;
-    }
+  .americolor-grid {
+    grid-template-columns: 1fr;
+  }
+  .americolor-image {
+    order: -1;
+    text-align: center;
+  }
+  .americolor-placeholder {
+    height: 300px;
+    margin-bottom: 20px;
+  }
+  .americolor-text {
+    padding-right: 0;
+  }
+}
+/* Opcional: full width en mobile */
+@media (max-width: 520px) {
+  .americolor-text .btn-primary.shop-btn {
+    width: 100%;
+    max-width: 360px;          /* evita que quede enorme */
+  }
 }
 /* -------------------------------------
    5b) Gallery Section – ajustes sutiles
@@ -948,49 +992,4 @@ footer {
     .gallery-item.wide {
         grid-column: span 2;
     }
-}
-/* Botón de "Consultar Personalizados" dentro de la card oscura */
-.custom-macaron-card .btn-primary.shop-btn {
-  background-color: #fff !important;                 /* normal: fondo blanco */
-  color: var(--color-primary) !important;            /* texto coral */
-  border: 2px solid var(--color-primary) !important;
-  -webkit-tap-highlight-color: transparent;          /* iOS */
-}
-
-/* hover, focus y active con el mismo estilo (relleno coral, texto blanco) */
-.custom-macaron-card .btn-primary.shop-btn:hover,
-.custom-macaron-card .btn-primary.shop-btn:focus,
-.custom-macaron-card .btn-primary.shop-btn:active {
-  background-color: var(--color-primary) !important;
-  color: #fff !important;
-  border-color: var(--color-primary) !important;
-  box-shadow: 0 4px 10px rgba(0,0,0,.15);
-  transform: translateY(0);                           /* evita “hundirse” raro en iOS */
-}
-
-/* Por si el navegador aplica :visited en <a> */
-.custom-macaron-card .btn-primary.shop-btn:visited {
-  color: var(--color-primary) !important;
-}
-
-/* --- Botón "Ver Catálogo y Precios" (sección Americolor) --- */
-.americolor-text .btn-primary.shop-btn {
-  background-color: #fff;               /* fondo blanco */
-  color: var(--color-primary);          /* texto coral */
-  border: 2px solid var(--color-primary);
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  border-radius: 50px;
-  padding: 14px 26px;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-}
-
-.americolor-text .btn-primary.shop-btn:hover,
-.americolor-text .btn-primary.shop-btn:focus,
-.americolor-text .btn-primary.shop-btn:active {
-  background-color: var(--color-primary);
-  color: #fff;                          /* texto visible */
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
