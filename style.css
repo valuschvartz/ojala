@@ -970,15 +970,64 @@ footer {
         text-align: center;
     }
     .social-links { margin-top: 15px; }
+/* --- NAV: forzar comportamiento correcto en desktop --- */
 
-    /* Navegación Móvil */
-    nav { display: none; flex-direction: column; position: absolute; top: 80px; left: 0; width: 100%; background-color: var(--color-background-light); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); padding-bottom: 10px; }
-    nav.active { display: flex; }
-    nav ul { flex-direction: column; padding: 10px 0; align-items: stretch; margin-right: 0; }
-    nav ul li { margin: 0; text-align: center; }
-    nav ul li a { display: block; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
-    .instagram-icon-nav { display: none; } /* Ocultar del nav en móvil */
-    .menu-toggle { display: block; }
+/* Mobile por defecto */
+#nav-menu { display: none; }
+#nav-menu.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 0; right: 0; top: 100%;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,.1);
+  padding: 10px 0;
+  z-index: 1000;
+}
+#nav-menu ul { 
+  list-style: none; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+  align-items: stretch; 
+  margin: 0; 
+  padding: 0 16px;
+}
+#nav-menu ul li a { 
+  display: block; 
+  padding: 10px 0; 
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Desktop >= 992px: SIEMPRE visible, sin hamburguesa */
+@media (min-width: 992px) {
+  header { position: sticky; top: 0; z-index: 1000; }
+  #nav-menu {
+    display: flex !important;
+    position: static !important;
+    flex-direction: row !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  #nav-menu ul {
+    flex-direction: row !important;
+    gap: 22px !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  #nav-menu ul li a { 
+    border: 0 !important; 
+    padding: 6px 0 !important; 
+    white-space: nowrap;
+    font-weight: 600;
+    color: var(--color-text-dark);
+  }
+  .menu-toggle { display: none !important; } /* oculta hamburguesa */
+}
+
+/* Opcional: que las anclas no queden tapadas por el header sticky */
+.section { scroll-margin-top: 90px; }
 
     /* Galería */
     .gallery-grid {
